@@ -5,7 +5,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      "ubuntu": ["ubuntu"]
+    },
+    extend: {}
   },
   plugins: [],
 }
