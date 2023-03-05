@@ -13,8 +13,8 @@ export default function StepsSelector(props) {
   return(
     <Container styles="absolute top-10 w-full flex gap-2 justify-center lg:flex-col lg:justify-none lg:gap-6">
       {steps.map((step, index) => (
-        <Container styles="flex items-center lg:ml-12">
-          <button key={index} onClick={() => alert("Select form step")} className={`block w-10 h-10 border border-wihte rounded-full font-bold text-xs text-white leading-10 ${currentStep == index ? "bg-sky-300 border-sky-300 text-purple-500" : ""}`}>
+        <Container key={step.id} styles="flex items-center lg:ml-12">
+          <button onClick={() => alert("Select form step")} className={`block w-10 h-10 border border-wihte rounded-full font-bold text-xs leading-10 ${currentStep == index ? "bg-light-blue border-light-blue text-marine-blue" : "text-white"}`}>
             {index + 1}
           </button>
           <Container styles="hidden pl-4 uppercase lg:block">
