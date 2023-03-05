@@ -8,6 +8,7 @@ import Container from "../Container"
 import PersonalInformation from "./PersonalInformation"
 import Plans from "./Plans"
 import Addons from "./Addons"
+import Summary from "./Summary"
 
 export default function StepsForm(props) {
   // app state
@@ -29,7 +30,7 @@ export default function StepsForm(props) {
       case 2:
         return <Addons />
       default:
-        return <h1>default</h1>
+        return <Summary />
     }
   }
 
