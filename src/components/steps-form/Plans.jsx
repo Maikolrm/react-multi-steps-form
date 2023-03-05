@@ -2,6 +2,7 @@ import { useContext } from "react"
 
 // context
 import AppState from "../../context/AppState"
+import AppDispatch from "../../context/AppDispatch"
 
 // components
 import Container from "../Container"
@@ -9,11 +10,13 @@ import FormHeader from "./FormHeader"
 
 // plan modality
 function ModalitySelector(props) {
+  // app dispatch
+  const appDispatch = useContext(AppDispatch)
+
   return(
     <Container styles="mx-6">
-      <input onChange={() => alert("Change plan modality")} type="checkbox" className="hidden" value={props.monthly} />
-      <button type="button" className="block w-10 p-[.2rem] bg-marine-blue rounded-full">
-        <span className="block w-3 h-3 rounded-full bg-white"></span>
+      <button onClick={() => appDispatch({ type: "set-plan-modality", value: !props.monthly })} type="button" className="block w-10 p-[.2rem] bg-marine-blue rounded-full">
+        <span className={`relative ${props.monthly ? "" : "left-6"} block w-3 h-3 rounded-full bg-white transition duration-200`} />
       </button>
     </Container>
   )
@@ -36,10 +39,10 @@ export default function Plans(props) {
               <h3 className={`font-semibold text-base text-sky-700 capitalize leading-none`}>
                 {plan.name}
               </h3>
-              <p className="my-2 text-sm text-gray-400 leading-none">
+              <p className="mt-2 text-sm text-gray-400 leading-none">
                 ${plan.price}/mo
               </p>
-              <span className={`${plans.monthly ? "block" : "hidden"} text-xs text-sky-600 leading-none`}>
+              <span className={`${plans.monthly ? "hidden" : "block"} mt-2 text-xs text-sky-600 leading-none`}>
                 2 months free
               </span>
             </Container>
@@ -51,7 +54,7 @@ export default function Plans(props) {
           monthly
         </h4>
         <ModalitySelector monthly={plans.monthly} />
-        <h4 className={`font-semibold text-sm capitalize leading-none ${!plans.monthly ? "text-sky-500" : "text-gray-400"}`}>
+        <h4 className={`font-semibold text-sm capitalize leading-none ${!plans.monthly ? "text-marine-blue" : "text-cool-gray"}`}>
           yearly
         </h4>
       </Container>
