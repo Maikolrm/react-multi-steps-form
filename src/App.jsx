@@ -31,6 +31,9 @@ function App() {
       case "set-plan-modality":
         draft.plans.monthly = action.value
         break
+      case "check-addon":
+        draft.addons.options = draft.addons.options.map(prev => ({ ...prev, checked: (prev.id == action.id) ? action.checked : prev.checked }))
+        break
     }
   }
 
