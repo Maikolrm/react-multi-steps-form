@@ -28,6 +28,9 @@ function App() {
         // const personalInformation = draft.formData[0]
         // personalInformation.fields = personalInformation.fields.map(field => ({ ...field, value: field.id == action.id ? action.value : field.value }))
         break
+      case "select-plan":
+        draft.plans.options = draft.plans.options.map(prev => ({ ...prev, selected: prev.id == action.id }))
+        break
       case "set-plan-modality":
         draft.plans.monthly = action.value
         break
