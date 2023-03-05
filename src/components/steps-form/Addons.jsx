@@ -2,6 +2,7 @@ import { useContext } from "react"
 
 // context
 import AppState from "../../context/AppState"
+import AppDispatch from "../../context/AppDispatch"
 
 // components
 import Container from "../Container"
@@ -11,12 +12,15 @@ export default function Addons(props) {
   // app state
   const { plans, addons } = useContext(AppState)
 
+  // app dispatch
+  const appDispatch = useContext(AppDispatch)
+
   return(
     <Container styles="">
       <FormHeader heading={addons.heading} description={addons.description} />
       <Container styles="grid gap-6">
         {addons.options.map(addon => (
-          <button key={addon.id} type="button" className={`flex items-center p-6 border ${addon.checked ? "border-marine-blue" : "border-light-gray"} rounded-lg`}>
+          <button onClick={() => appDispatch({ type: "check-addon", id: addon.id, checked: !addon.checked })} key={addon.id} type="button" className={`flex items-center p-6 border ${addon.checked ? "border-marine-blue" : "border-light-gray"} rounded-lg`}>
             <span className={`block w-7 h-7 border ${addon.checked ? "bg-marine-blue border-marine-blue" : "border-light-gray"} rounded text-center leading-7`}>
             </span>
             <Container styles="flex-1 pl-6 text-left">
