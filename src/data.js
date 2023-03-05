@@ -40,11 +40,28 @@ export const data = {
     heading: "select your plan",
     description: "you have the option of monthly or yearly billing",
     options: [
-      { id: 1, name: "arcade", price: 9, icon: "icon-arcade.svg" },
-      { id: 2, name: "advanced", price: 12, icon: "icon-advanced.svg" },
-      { id: 3, name: "pro", price: 9, icon: "icon-pro.svg" }
+      {
+        id: 1,
+        name: "arcade",
+        price: 9,
+        icon: "icon-arcade.svg",
+        selected: true
+      },
+      {
+        id: 2,
+        name: "advanced",
+        price: 12,
+        icon: "icon-advanced.svg",
+        selected: false
+      },
+      {
+        id: 3,
+        name: "pro",
+        price: 15,
+        icon: "icon-pro.svg",
+        selected: false
+      }
     ],
-    current: 0,
     monthly: true
   },
   addons: {
@@ -60,14 +77,14 @@ export const data = {
       },
       {
         id: 2,
-        name: "online service",
+        name: "larger storage",
         description: "extra 1TB og cloud save",
         price: 2,
         checked: false
       },
       {
         id: 3,
-        name: "online service",
+        name: "customizable profile",
         description: "custom theme on your profile",
         price: 2,
         checked: false
