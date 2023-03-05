@@ -26,12 +26,15 @@ export default function Plans(props) {
   // app state
   const { plans } = useContext(AppState)
 
+  // app dispatch
+  const appDispatch = useContext(AppDispatch)
+
   return(
     <Container styles="">
       <FormHeader heading={plans.heading} description={plans.description} />
       <Container styles="grid gap-6">
-        {plans.options.map((plan, index) => (
-          <button key={plan.id} type="button" className={`flex p-4 border rounded-lg text-left ${plans.current == index ? "border-sky-500" : "border-gray-300"}`}>
+        {plans.options.map(plan => (
+          <button onClick={() => appDispatch({ type: "select-plan", id: plan.id })} key={plan.id} type="button" className={`flex p-4 border rounded-lg text-left ${plan.selected ? "border-sky-500" : "border-gray-300"}`}>
             <Container styles="w-10 h-10 bg-red-200 rounded-full overflow-hidden">
               <img src={`/${plan.icon}`} alt={`icon ${plans.name}`} className="block w-full"/>
             </Container>
