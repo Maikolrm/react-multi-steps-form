@@ -6,6 +6,7 @@ import AppState from "../../context/AppState"
 // components
 import Container from "../Container"
 import PersonalInformation from "./PersonalInformation"
+import Plans from "./Plans"
 
 export default function StepsForm(props) {
   // app state
@@ -23,7 +24,7 @@ export default function StepsForm(props) {
       case 0:
         return <PersonalInformation />
       case 1:
-        return <h1>addons</h1>
+        return <Plans />
       case 2:
         return <h1>text</h1>
       default:
