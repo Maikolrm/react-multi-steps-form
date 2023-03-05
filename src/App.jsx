@@ -44,8 +44,8 @@ function App() {
           <Container styles="relative flex flex-col flex-1 p-4 pt-0 lg:p-0">
             <StepsForm />
             <Container styles="flex justify-between mt-auto">
-              <Button styles={`text-gray-400 ${state.currentStep ? "" : "invisible"}`} name="go back" action="prev" />
-              <Button styles="bg-blue-900 text-white" name="next step" action="next" />
+              <Button styles={`text-cool-gray ${state.currentStep ? "" : "invisible"}`} name="go back" action="prev" />
+              <Button styles="bg-marine-blue text-light-gray" name="next step" action="next" />
             </Container>
           </Container>
         </Container>
