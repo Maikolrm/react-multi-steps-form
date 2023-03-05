@@ -7,6 +7,18 @@ import AppState from "../../context/AppState"
 import Container from "../Container"
 import FormHeader from "./FormHeader"
 
+// plan modality
+function ModalitySelector(props) {
+  return(
+    <Container styles="mx-6">
+      <input onChange={() => alert("Change plan modality")} type="checkbox" className="hidden" value={props.monthly} />
+      <button type="button" className="block w-10 p-[.2rem] bg-marine-blue rounded-full">
+        <span className="block w-3 h-3 rounded-full bg-white"></span>
+      </button>
+    </Container>
+  )
+}
+
 export default function Plans(props) {
   // app state
   const { plans } = useContext(AppState)
@@ -34,11 +46,11 @@ export default function Plans(props) {
           </button>
         ))}
       </Container>
-      <Container styles="flex justify-center p-10 pb-8">
-        <h4 className={`font-semibold text-sm capitalize leading-none ${plans.monthly ? "text-sky-500" : "text-gray-500"}`}>
+      <Container styles="flex items-center justify-center p-10 pb-8">
+        <h4 className={`font-semibold text-sm capitalize leading-none ${plans.monthly ? "text-marine-blue" : "text-cool-gray"}`}>
           monthly
         </h4>
-        <input onChange={() => alert("Change plan modality")} type="checkbox" className="inline-block mx-6" value={plans.monthly} />
+        <ModalitySelector monthly={plans.monthly} />
         <h4 className={`font-semibold text-sm capitalize leading-none ${!plans.monthly ? "text-sky-500" : "text-gray-400"}`}>
           yearly
         </h4>
