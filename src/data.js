@@ -6,38 +6,36 @@ export const data = {
     { id: 4, name: "sumary", invalid: false }
   ],
   currentStep: 0,
-  formData: [
-    {
-      heading: "personal info",
-      description: "please provide your name, email address and phone number",
-      fields: [
-        {
-          id: 1,
-          label: "name",
-          name: "name",
-          value: "",
-          invalid: false,
-          hint: ""
-        },
-        {
-          id: 2,
-          label: "email",
-          name: "email",
-          value: "",
-          invalid: false,
-          hint: ""
-        },
-        {
-          id: 3,
-          label: "phone number",
-          name: "phone",
-          value: "",
-          invalid: false,
-          hint: ""
-        }
-      ] // fields array end
-    }
-  ], // form data end
+  formData: {
+    heading: "personal info",
+    description: "please provide your name, email address and phone number",
+    fields: [
+      {
+        id: 1,
+        label: "name",
+        name: "name",
+        value: "",
+        invalid: false,
+        hint: ""
+      },
+      {
+        id: 2,
+        label: "email",
+        name: "email",
+        value: "",
+        invalid: false,
+        hint: ""
+      },
+      {
+        id: 3,
+        label: "phone number",
+        name: "phone",
+        value: "",
+        invalid: false,
+        hint: ""
+      }
+    ] // fields array end
+  },
   plans: {
     heading: "select your plan",
     description: "you have the option of monthly or yearly billing",
