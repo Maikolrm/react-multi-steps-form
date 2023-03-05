@@ -11,29 +11,12 @@ import Button from "./components/Button"
 import StepsSelector from "./components/StepsSelector"
 import StepsForm from "./components/steps-form/StepsForm"
 
+// data
+import { data } from "./data"
+
 function App() {
   // initialState
-  const initialState = {
-    steps: [
-      { id: 1, name: "your info" },
-      { id: 2, name: "select plan" },
-      { id: 3, name: "add-ons" },
-      { id: 4, name: "summary" }
-    ],
-    currentStep: 0,
-    formData: {
-      personalInformation: {
-        heading: "personal info",
-        description: "please provide your name, email address and phone number",
-        fields: [
-          { id: 1, label: "name", name: "name", value: "" },
-          { id: 2, label: "email", name: "email", value: "" },
-          { id: 3, label: "phone number", name: "phone", value: "" },
-        ]
-      } // presonalInformation end
-    },
-    requestCount: 0
-  }
+  const initialState = { ...data }
 
   // reducer
   function reducer(draft, action) {
@@ -42,8 +25,8 @@ function App() {
         draft.currentStep = action.value
         break
       case "set-information-field":
-        const personalInformation = draft.steps.personalInformation
-        personalInformation.fields = personalInformation.fields.map(field => ({ ...field, value: field.id == action.id ? action.value : field.value }))
+        // const personalInformation = draft.formData[0]
+        // personalInformation.fields = personalInformation.fields.map(field => ({ ...field, value: field.id == action.id ? action.value : field.value }))
         break
     }
   }
