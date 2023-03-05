@@ -51,9 +51,27 @@ export const data = {
     heading: "pick add-ons",
     description: "add-ons help enhance your gaming experience",
     options: [
-      { id: 1, name: "online service", description: "", price: 1, checked: false },
-      { id: 2, name: "large storage", description: "", price: 2, checked: false },
-      { id: 3, name: "customizable profile", description: "", price: 2, checked: false }
+      {
+        id: 1,
+        name: "online service",
+        description: "access to multiplayer games",
+        price: 1,
+        checked: true
+      },
+      {
+        id: 2,
+        name: "online service",
+        description: "extra 1TB og cloud save",
+        price: 2,
+        checked: false
+      },
+      {
+        id: 3,
+        name: "online service",
+        description: "custom theme on your profile",
+        price: 2,
+        checked: false
+      }
     ]
   },
   requestCount: 0
