@@ -28,6 +28,9 @@ function App() {
         // const personalInformation = draft.formData[0]
         // personalInformation.fields = personalInformation.fields.map(field => ({ ...field, value: field.id == action.id ? action.value : field.value }))
         break
+      case "set-plan-modality":
+        draft.plans.monthly = action.value
+        break
     }
   }
 
