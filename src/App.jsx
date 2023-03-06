@@ -45,9 +45,12 @@ function App() {
   return (
     <AppState.Provider value={state}>
       <AppDispatch.Provider value={dispatch}>
-        <Container styles="flex flex-col w-full max-w-lg h-full m-auto bg-white rounded-xl shadow-md overflow-hidden lg:max-w-[75%] lg:flex-row lg:h-auto lg:p-4 lg:rounded-3xl">
+        <Container styles="flex flex-col w-full max-w-lg h-full m-auto bg-white rounded-xl shadow-md overflow-hidden lg:max-w-full lg:flex-row lg:h-auto lg:p-4 lg:rounded-3xl xl:max-w-screen-xl">
           <Container styles="relative overflow-hidden lg:w-[30%]">
-            <img src="/sidebar-mobile.svg" alt="sidebar background" className="sidebar block w-full" />
+            <picture>
+              <source media="(min-width: 1024px)" srcSet="/sidebar.svg" />
+              <img src="/sidebar-mobile.svg" alt="sidebar background" className="sidebar block w-full" />
+            </picture>
             <StepsSelector />
           </Container>
           <Container styles="relative flex flex-col flex-1 p-4 pt-0 lg:px-[6vw] lg:py-[2vw] lg:flex">
