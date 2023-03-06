@@ -35,7 +35,7 @@ export default function StepsForm(props) {
   }
 
   return(
-    <form onSubmit={handleSubmit} className="relative -top-12 p-6 rounded-lg bg-white shadow-lg">
+    <form onSubmit={handleSubmit} className="relative -top-12 p-6 rounded-lg bg-white shadow-lg lg:top-0 lg:shadow-none lg:p-0">
       {renderCurrentStep()}
     </form>
   )
