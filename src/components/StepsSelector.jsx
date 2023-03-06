@@ -11,7 +11,7 @@ export default function StepsSelector(props) {
   const { steps, currentStep } = useContext(AppState)
 
   return(
-    <Container styles="absolute top-10 w-full flex gap-2 justify-center lg:flex-col lg:justify-none lg:gap-6">
+    <Container styles="absolute top-14 w-full flex gap-2 justify-center lg:top-12 lg:flex-col lg:justify-none lg:gap-6">
       {steps.map((step, index) => (
         <Container key={step.id} styles="flex items-center lg:ml-12">
           <button onClick={() => alert("Select form step")} className={`block w-10 h-10 border border-wihte rounded-full font-bold text-xs leading-10 ${currentStep == index ? "bg-light-blue border-light-blue text-marine-blue" : "text-white"}`}>
