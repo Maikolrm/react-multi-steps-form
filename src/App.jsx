@@ -25,8 +25,8 @@ function App() {
         draft.currentStep = action.value
         break
       case "set-information-field":
-        // const personalInformation = draft.formData[0]
-        // personalInformation.fields = personalInformation.fields.map(field => ({ ...field, value: field.id == action.id ? action.value : field.value }))
+        const personalInformation = draft.formData
+        personalInformation.fields = personalInformation.fields.map(field => ({ ...field, value: field.id == action.id ? action.value : field.value }))
         break
       case "select-plan":
         draft.plans.options = draft.plans.options.map(prev => ({ ...prev, selected: prev.id == action.id }))
