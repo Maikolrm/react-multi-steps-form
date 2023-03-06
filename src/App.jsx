@@ -50,7 +50,7 @@ function App() {
             <img src="/sidebar-mobile.svg" alt="sidebar background" className="sidebar block w-full" />
             <StepsSelector />
           </Container>
-          <Container styles="relative flex flex-col flex-1 p-4 pt-0 lg:p-0">
+          <Container styles="relative flex flex-col flex-1 p-4 pt-0 lg:px-[6vw] lg:py-[2vw] lg:flex">
             <StepsForm />
             <Container styles="flex justify-between mt-auto">
               <Button styles={`text-cool-gray ${state.currentStep ? "" : "invisible"}`} name="go back" action="prev" />
