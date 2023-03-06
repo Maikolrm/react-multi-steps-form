@@ -21,8 +21,7 @@ module.exports = {
         "cool-gray": "hsl(231, 11%, 63%)",
         "light-gray": "hsl(229, 24%, 87%)",
         "Magnolia": "hsl(217, 100%, 97%)",
-        "alabaster": "hsl(231, 100%, 99%)",
-        "White": "hsl(0, 0%, 100%)"
+        "alabaster": "hsl(231, 100%, 99%)"
       }
     }
   },
